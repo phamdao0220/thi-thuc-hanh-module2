@@ -38,4 +38,13 @@ class itemsModel
         return $stmt->fetchAll();
     }
 
+    public function deleteItems($id)
+    {
+        $sql = 'DELETE FROM Items where id=:id';
+        $stmt = $this->database->prepare($sql);
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+
+    }
+
 }

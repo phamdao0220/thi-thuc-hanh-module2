@@ -23,11 +23,11 @@ class itemsController
     {
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $items = $this->ItemsModel->getAll();
-            include "src/vie/add.php";
+            include "src/view/add.php";
         } else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $items_id = $_POST['items_id'];
             $items_name = $_POST['items_name'];
-            $item= $_POST['item'];
+            $item = $_POST['item'];
             $price = $_POST['price'];
             $amount = $_POST['amount'];
             $date_created = $_POST['date_created'];
@@ -43,12 +43,20 @@ class itemsController
             );
         }
     }
-    public function deleteItems($id)
+
+    private function redirectToList()
     {
-        $sql = 'DELETE FROM Items where id=:id';
-        $stmt = $this->database->prepare($sql);
-        $stmt->bindParam(":id", $id);
-        $stmt->execute();
+
+        $items = $this->ItemsModel->getAll();
+        header("location:index.php?page=items");
 
     }
+
+    public function deleteItems()
+    {
+        $id = $_REQUEST['id'];
+        $this->ItemsModel->deleteItems($id);
+        $this->redirectToList();
+    }
+
 }

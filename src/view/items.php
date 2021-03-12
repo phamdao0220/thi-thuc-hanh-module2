@@ -1,6 +1,6 @@
 <div>
     <table>
-        <tr>
+        <tr><th>STT</th>
             <th>Mã mặt hàng</th>
             <th>Tên mặt hàng</th>
             <th>Loại mặt hàng</th>
@@ -20,7 +20,7 @@
                 <td><?php echo $item['date_created'] ?></td>
                 <td><?php echo $item['item_description'] ?></td>
                 <td>
-                    <a onclick="return confirm('Bạn có muốn xoá <?php echo $item["product_name"] ?> không ')""
+                    <a onclick="return confirm('Bạn có muốn xoá <?php echo $item["items_name"] ?> không ')""
                     href="index.php?page=delete&id=<?php echo $item['id'] ?>" class="btn btn-outline-danger
                     btn-sm">Xoá </a>
                 </td>
