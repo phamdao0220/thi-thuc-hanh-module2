@@ -59,4 +59,38 @@ class itemsController
         $this->redirectToList();
     }
 
+    public function editItems()
+    {
+
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+            $id = $_REQUEST['id'];
+            $items = $this->ItemsModel->findById($id);
+            include_once "src/view/edit.php";
+        } else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $id = $_POST['id'];
+            $items_id = $_POST['items_id'];
+            $items_name = $_POST['items_name'];
+            $item = $_POST['item'];
+            $price = $_POST['price'];
+            $amount = $_POST['amount'];
+            $date_created = $_POST['date_created'];
+            $item_description = $_POST['item_description'];
+
+            $this->ItemsModel->editItems($id, $items_id, $items_name, $item, $price, $amount,$date_created,$item_description);
+            $this->show();
+        }
+
+
+
+    }
+
+//    public function search()
+//    {
+//
+//        $search = '%' . $_REQUEST['search'] . '%';
+//        $items = $this->ItemsModel->find($search);
+//        include "src/view/Items/items.php";
+//    }
+//
+
 }

@@ -1,6 +1,7 @@
 <div>
     <table>
-        <tr><th>STT</th>
+        <tr>
+            <th>STT</th>
             <th>Mã mặt hàng</th>
             <th>Tên mặt hàng</th>
             <th>Loại mặt hàng</th>
@@ -12,6 +13,7 @@
         </tr>
         <?php foreach ($items as $key => $item) : ?>
             <tr>
+                <td><?php echo $key + 1 ?></td>
                 <td><?php echo $item['items_id'] ?></td>
                 <td><?php echo $item['items_name'] ?></td>
                 <td><?php echo $item['item'] ?></td>
