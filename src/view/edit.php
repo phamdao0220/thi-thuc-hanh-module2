@@ -3,7 +3,7 @@
     <div>
         <div>
             <span></span>
-            <input type="hidden"value="<?php echo $item['id'] ?>">
+            <input type="hidden" name="id" value="<?php echo $item['id'] ?>">
         </div>
         <div>
             <span>Mã mặt hàng </span>

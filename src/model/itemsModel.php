@@ -70,12 +70,12 @@ class itemsModel
         $stmt->bindParam(':item_description', $item_description);
         $stmt->execute();
     }
-//    public function find($search)
-//    {
-//        $sql = "SELECT * FROM Items WHERE items_code LIKE '$search'or  product_name LIKE '$search'";
-//        $stmt = $this->database->prepare($sql);
-//        $stmt->execute();
-//        return $stmt->fetchAll();
-//    }
+    public function find($search)
+    {
+        $sql = "SELECT * FROM Items WHERE  items_name LIKE '$search'";
+        $stmt = $this->database->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 
 }

@@ -84,13 +84,13 @@ class itemsController
 
     }
 
-//    public function search()
-//    {
-//
-//        $search = '%' . $_REQUEST['search'] . '%';
-//        $items = $this->ItemsModel->find($search);
-//        include "src/view/Items/items.php";
-//    }
-//
+    public function search()
+    {
+
+        $search = '%' . $_REQUEST['search'] . '%';
+        $items = $this->ItemsModel->find($search);
+        include "src/view/items.php";
+    }
+
 
 }
