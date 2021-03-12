@@ -39,7 +39,7 @@
         </div >
     </div>
     <div style="margin-top: 20px">
-        <button class="btn btn-outline-warning" type="submit">Sửa</button>
+        <button type="submit">Sửa</button>
 <!--        <button class="btn btn-outline-secondary" onclick="window.history.go(-1); return false;" type="submit">Huỷ</button>-->
     </div>
 </form>

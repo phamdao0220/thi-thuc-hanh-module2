@@ -6,9 +6,9 @@
 <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand">Navbar</a>
-        <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+        <form class="d-flex" method="post" action="index.php?page=search">
+            <input name="search" type="search" placeholder="Tìm kiếm " aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Tìm kiếm</button>
         </form>
     </div>
 </nav>
